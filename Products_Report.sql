@@ -1,4 +1,4 @@
-
+/* Prdducts Table */
 SELECT [ProductID]
         ,pp.Name
       --,[ProductNumber]
