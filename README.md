@@ -4,6 +4,7 @@ For this data analysis project, the business request is an executive sales repor
 The following user stories were defined to fulfill delivery and ensure that acceptance criteria is
 maintained throughout the project. 
 
+
 | As a (role) | I want (request / demand)| So that I (user value)                                                                         | Acceptance Criteria                                                                   |
 |---|-------------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | Sales Manager | To get a dashboard overview <br/>of internet sales | Can follow better <br/>which customers <br/>and products sells<br/> the best                   | A Power BI <br/>dashboard which<br/> updates data once<br/> a day                     |
@@ -19,12 +20,14 @@ necessary data model.
 
 In the repository directory you will find the SQL statements used for cleansing and transforming the data. 
 
+
 ## Data Model
 
 Below is the screenshot of the data model in Power BI. It shows how Fact_Sales table has been connected
 to the other dimension tables.
 
 ![Alt text](diagramPBI.PNG)
+
 
 ## Sales Management Dashboard
 
