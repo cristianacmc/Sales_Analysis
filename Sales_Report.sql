@@ -4,7 +4,7 @@ SELECT oh.[SalesOrderID]
       --,[RevisionNumber]
 	   ,od.ProductID
 	  --,pp.NamE
-      ,FORMAT([OrderDate], 'MM') AS Month
+      ,FORMAT([OrderDate], 'MMM') AS Month
 	  ,FORMAT([OrderDate], 'yyyy') AS Year
       ,FORMAT([DueDate], 'dd-MM-yyyy') AS DueDate
       ,FORMAT([ShipDate], 'dd-MM-yyyy') AS ShipDate

@@ -1,6 +1,10 @@
 /* Prdducts Table */
 SELECT [ProductID]
         ,pp.Name
+	    ,ps.Name AS Subcategory
+		,pc.Name AS Category
+		,pm.Name AS Model
+		,pd.Description
       --,[ProductNumber]
       --,[MakeFlag]
       --,[FinishedGoodsFlag]
@@ -8,7 +12,7 @@ SELECT [ProductID]
       --,[SafetyStockLevel]
       --,[ReorderPoint]
       ,[StandardCost]
-      ,[ListPrice]
+      ,[ListPrice] as Selling_Price
       --,[Size]
       --,[SizeUnitMeasureCode]
       --,[WeightUnitMeasureCode]
@@ -19,15 +23,11 @@ SELECT [ProductID]
       --,[Style]
       --,[ProductSubcategoryID]
       --,[ProductModelID]
-      ,[SellStartDate]
-      ,[SellEndDate]
+      ,FORMAT([SellStartDate], 'dd-MM-yyyy') AS SellStartDate
+      ,FORMAT([SellEndDate], 'dd-MM-yyy') AS SellEndDate
       --,[DiscontinuedDate]
       --,[rowguid]
-      --,[ModifiedDate]
-	    ,ps.Name AS Subcategory
-		,pc.Name AS Category
-		,pm.Name AS Model
-		--,pd.Description
+      --[ModifiedDate]
   FROM [Production].[Product] AS pp
   LEFT JOIN Production.ProductSubcategory AS ps
 	ON pp.ProductSubcategoryID = ps.ProductSubcategoryID
@@ -35,11 +35,11 @@ SELECT [ProductID]
 	ON ps.ProductCategoryID = pc.ProductCategoryID
   LEFT JOIN Production.ProductModel AS pm
 	ON pp.ProductModelID = pm.ProductModelID 
-  --INNER JOIN Production.ProductModelProductDescriptionCulture AS pdc
-	--ON pm.ProductModelID = pdc.ProductModelID
-  --INNER JOIN Production.ProductDescription AS pd
-	--ON pdc.ProductDescriptionID  = pd.ProductDescriptionID
- 
+ INNER JOIN Production.ProductModelProductDescriptionCulture AS pdc
+	ON pm.ProductModelID = pdc.ProductModelID
+  INNER JOIN Production.ProductDescription AS pd
+	ON pdc.ProductDescriptionID  = pd.ProductDescriptionID
+WHERE pp.FinishedGoodsFlag = 1 AND pdc.CultureID = 'en'
 
 
 
