@@ -39,7 +39,7 @@ focus on sales per customers and per products respectively, combining different 
 
 ![](Customers_dashboard.PNG)
 
-![](Products_dashboard.PNG)
+![](Products_Dashboard.PNG)
 
 ## Resources Used
 - SQL Server Management Studio (SSMS)
